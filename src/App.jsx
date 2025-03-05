@@ -1,45 +1,19 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-
-function Header() {
-	return (
-		<div>
-			<a href='https://vite.dev' target='_blank'>
-				<img src={viteLogo} className='logo' alt='Vite logo' />
-			</a>
-			<a href='https://react.dev' target='_blank'>
-				<img src={reactLogo} className='logo react' alt='React logo' />
-			</a>
-		</div>
-	);
-}
-
-function Card({ onClick, count }) {
-	return (
-		<div className='card'>
-			<button onClick={onClick}>count is {count}</button>
-			<p>
-				Edit <code>src/App.jsx</code> and save to test HMR
-			</p>
-		</div>
-	);
-}
-
 function App() {
-	const [count, setCount] = useState(0);
-
-	return (
-		<>
-			<Header />
-			<h1>Vite + React</h1>
-			<Card onClick={() => setCount((count) => count + 1)} count={count} />
-			<p className='read-the-docs'>
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
-	);
+  return (
+    <div>
+      <header>
+        <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+        <h1>React Essentials</h1>
+        <p>
+          Fundamental React concepts you will need for almost any app you are
+          going to build!
+        </p>
+      </header>
+      <main>
+        <h2>Time to get started!</h2>
+      </main>
+    </div>
+  );
 }
 
 export default App;
