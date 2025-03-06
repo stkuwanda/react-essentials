@@ -1,3 +1,5 @@
+import './CoreConcepts.component.css';
+
 function CoreConcepts({ children }) {
 	return (
 		<section id='core-concepts'>

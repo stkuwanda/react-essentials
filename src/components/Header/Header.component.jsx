@@ -1,6 +1,7 @@
-import reactImg from '../assets/react-core-concepts.png';
-import { reactDescriptions } from '../data';
-import { randomInt } from '../utils';
+import reactImg from '../../assets/react-core-concepts.png';
+import { reactDescriptions } from '../../data';
+import { randomInt } from '../../utils';
+import './Header.component.css'
 
 function Header() {
 	const important = reactDescriptions[randomInt(2)];

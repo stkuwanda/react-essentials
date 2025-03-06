@@ -1,6 +1,6 @@
-import CoreConcept from './components/CoreConcept.component.jsx';
-import CoreConcepts from './components/CoreConcepts.component.jsx';
-import Header from './components/Header.component.jsx';
+import CoreConcept from './components/CoreConcept/CoreConcept.component.jsx';
+import CoreConcepts from './components/CoreConcepts/CoreConcepts.component.jsx';
+import Header from './components/Header/Header.component.jsx';
 import data from './data.js';
 
 function App() {
