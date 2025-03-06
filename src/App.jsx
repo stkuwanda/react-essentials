@@ -6,6 +6,10 @@ import TabButton from './components/TabButton/TabButton.component.jsx';
 import data, { reactArtifacts } from './data.js';
 
 function App() {
+	function handleClick(selectedButton) {
+		console.log(selectedButton);
+	}
+
 	return (
 		<div>
 			<Header />
@@ -17,7 +21,9 @@ function App() {
 				</CoreConcepts>
 				<Examples>
 					{reactArtifacts.map((item) => (
-						<TabButton key={item.id}>{item.name}</TabButton>
+						<TabButton key={item.id} onClick={() => handleClick(item.name)}>
+							{item.name}
+						</TabButton>
 					))}
 				</Examples>
 			</main>

@@ -1,7 +1,11 @@
 import './TabButton.component.css';
 
-function TabButton({children}) {
-  return (<li><button>{children}</button></li>);
+function TabButton({ onClick, children }) {
+	return (
+		<li>
+			<button onClick={onClick}>{children}</button>
+		</li>
+	);
 }
 
 export default TabButton;
