@@ -1,7 +1,5 @@
 import reactImg from './assets/react-core-concepts.png';
-import data from './data.js';
-
-const reactDescriptions = ['Fundamental', 'Core', 'Crucial'];
+import data, { reactDescriptions } from './data.js';
 
 function randomInt(max) {
 	return Math.floor(Math.random() * (max + 1));
@@ -19,7 +17,7 @@ function CoreConcepts({ children }) {
 function CoreConcept({ title, description, src }) {
 	return (
 		<li>
-			<img src={src} alt='' />
+			<img src={src} alt={title} />
 			<h3>{title}</h3>
 			<p>{description}</p>
 		</li>
@@ -48,12 +46,7 @@ function App() {
 			<main>
 				<CoreConcepts>
 					{data.map((item) => (
-						<CoreConcept
-							key={item.id}
-							title={item.title}
-							description={item.description}
-							src={item.src}
-						/>
+						<CoreConcept key={item.id} {...item} />
 					))}
 				</CoreConcepts>
 			</main>

@@ -35,4 +35,6 @@ const CORE_CONCEPTS = [
 	},
 ];
 
+export const reactDescriptions = ['Fundamental', 'Core', 'Crucial'];
+
 export default CORE_CONCEPTS;
