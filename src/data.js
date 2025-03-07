@@ -38,10 +38,61 @@ const CORE_CONCEPTS = [
 export const reactDescriptions = ['Fundamental', 'Core', 'Crucial'];
 
 export const reactArtifacts = [
-	{ id: uuidv4(), name: 'Components' },
-	{ id: uuidv4(), name: 'JSX' },
-	{ id: uuidv4(), name: 'Props' },
-	{ id: uuidv4(), name: 'State' },
+	{ id: uuidv4(), name: 'components', display: 'Components' },
+	{ id: uuidv4(), name: 'jsx', display: 'Jsx' },
+	{ id: uuidv4(), name: 'props', display: 'Props' },
+	{ id: uuidv4(), name: 'state', display: 'State' },
 ];
+
+export const EXAMPLES = {
+	components: {
+		title: 'Components',
+		description:
+			'Components are the building blocks of React applications. A component is a self-contained module (HTML + optional CSS + JS) that renders some output.',
+		code: `
+function Welcome() {
+  return <h1>Hello, World!</h1>;
+}`,
+	},
+	jsx: {
+		title: 'JSX',
+		description:
+			'JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript (e.g., it may output dynamic content).',
+		code: `
+<div>
+  <h1>Welcome {userName}</h1>
+  <p>Time to learn React!</p>
+</div>`,
+	},
+	props: {
+		title: 'Props',
+		description:
+			'Components accept arbitrary inputs called props. They are like function arguments.',
+		code: `
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}`,
+	},
+	state: {
+		title: 'State',
+		description:
+			'State allows React components to change their output over time in response to user actions, network responses, and anything else.',
+		code: `
+function Counter() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  function handleClick() {
+    setIsVisible(true);
+  }
+
+  return (
+    <div>
+      <button onClick={handleClick}>Show Details</button>
+      {isVisible && <p>Amazing details!</p>}
+    </div>
+  );
+}`,
+	},
+};
 
 export default CORE_CONCEPTS;

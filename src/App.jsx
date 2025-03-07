@@ -1,16 +1,19 @@
+import { useState } from 'react';
 import CoreConcept from './components/CoreConcept/CoreConcept.component.jsx';
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.component.jsx';
 import Examples from './components/Examples/Examples.component.jsx';
 import Header from './components/Header/Header.component.jsx';
 import TabButton from './components/TabButton/TabButton.component.jsx';
-import data, { reactArtifacts } from './data.js';
+import data, { reactArtifacts, EXAMPLES } from './data.js';
+import TabContent from './components/TabContent/TabContent.component.jsx';
 
 function App() {
-	let tabContent = 'default';
+	console.log('App rendering...');
+	const [selectedButton, setSelectedButton] = useState('components');
+	console.log('selectedButton:', selectedButton);
 
 	function handleClick(selectedButton) {
-		console.log(selectedButton);
-		tabContent = selectedButton;
+		setSelectedButton(selectedButton);
 	}
 
 	return (
@@ -22,10 +25,18 @@ function App() {
 						<CoreConcept key={item.id} {...item} />
 					))}
 				</CoreConcepts>
-				<Examples tabContent={tabContent}>
+				<Examples
+					tabContent={
+						<TabContent
+							title={EXAMPLES[selectedButton].title}
+							description={EXAMPLES[selectedButton].description}
+							code={EXAMPLES[selectedButton].code}
+						/>
+					}
+				>
 					{reactArtifacts.map((item) => (
 						<TabButton key={item.id} onClick={() => handleClick(item.name)}>
-							{item.name}
+							{item.display}
 						</TabButton>
 					))}
 				</Examples>

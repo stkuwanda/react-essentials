@@ -1,6 +1,4 @@
 function CoreConcept({ title, description, src }) {
-	console.log('Render CoreConcept...');
-
 	return (
 		<li>
 			<img src={src} alt={title} />
