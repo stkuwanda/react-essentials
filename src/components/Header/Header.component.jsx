@@ -4,6 +4,7 @@ import { randomInt } from '../../utils';
 import './Header.component.css'
 
 function Header() {
+	console.log('Render Header...');
 	const important = reactDescriptions[randomInt(2)];
 
 	return (
