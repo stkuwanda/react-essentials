@@ -9,8 +9,19 @@ import TabContent from './components/TabContent/TabContent.component.jsx';
 
 function App() {
 	console.log('App rendering...');
-	const [selectedButton, setSelectedButton] = useState('components');
+	let tabContent = { tabContent: <p>Please click to selection an option.</p> };
+	const [selectedButton, setSelectedButton] = useState();
 	console.log('selectedButton:', selectedButton);
+
+	if (selectedButton) {
+		tabContent.tabContent = (
+			<TabContent
+				title={EXAMPLES[selectedButton].title}
+				description={EXAMPLES[selectedButton].description}
+				code={EXAMPLES[selectedButton].code}
+			/>
+		);
+	}
 
 	function handleClick(selectedButton) {
 		setSelectedButton(selectedButton);
@@ -25,15 +36,7 @@ function App() {
 						<CoreConcept key={item.id} {...item} />
 					))}
 				</CoreConcepts>
-				<Examples
-					tabContent={
-						<TabContent
-							title={EXAMPLES[selectedButton].title}
-							description={EXAMPLES[selectedButton].description}
-							code={EXAMPLES[selectedButton].code}
-						/>
-					}
-				>
+				<Examples {...tabContent}>
 					{reactArtifacts.map((item) => (
 						<TabButton key={item.id} onClick={() => handleClick(item.name)}>
 							{item.display}
