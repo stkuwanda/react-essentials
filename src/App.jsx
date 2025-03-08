@@ -38,7 +38,7 @@ function App() {
 				</CoreConcepts>
 				<Examples {...tabContent}>
 					{reactArtifacts.map((item) => (
-						<TabButton key={item.id} onClick={() => handleClick(item.name)}>
+						<TabButton isSelected={selectedButton === item.name} key={item.id} onClick={() => handleClick(item.name)}>
 							{item.display}
 						</TabButton>
 					))}
