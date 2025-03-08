@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import TabContent from '../TabContent/TabContent.component.jsx';
 import TabButton from '../TabButton/TabButton.component.jsx';
+import Section from '../Section/Section.component.jsx';
 import { EXAMPLES, reactArtifacts } from '../../data';
 import './Examples.component.css';
 
@@ -24,8 +25,7 @@ function Examples() {
 	}
 
 	return (
-		<section id='examples'>
-			<h2>Examples</h2>
+		<Section id='examples' title='Examples'>
 			<menu>
 				{reactArtifacts.map((item) => (
 					<TabButton
@@ -38,7 +38,7 @@ function Examples() {
 				))}
 			</menu>
 			{tabContent}
-		</section>
+		</Section>
 	);
 }
 
