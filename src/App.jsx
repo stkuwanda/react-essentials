@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 import CoreConcept from './components/CoreConcept/CoreConcept.component.jsx';
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.component.jsx';
 import Examples from './components/Examples/Examples.component.jsx';
@@ -28,7 +28,7 @@ function App() {
 	}
 
 	return (
-		<Fragment>
+		<>
 			<Header />
 			<main>
 				<CoreConcepts>
@@ -44,7 +44,7 @@ function App() {
 					))}
 				</Examples>
 			</main>
-		</Fragment>
+		</>
 	);
 }
 
