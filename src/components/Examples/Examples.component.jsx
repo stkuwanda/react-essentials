@@ -4,6 +4,7 @@ import TabButton from '../TabButton/TabButton.component.jsx';
 import Section from '../Section/Section.component.jsx';
 import { EXAMPLES, reactArtifacts } from '../../data';
 import './Examples.component.css';
+import Tabs from '../Tabs/Tabs.component.jsx';
 
 function Examples() {
 	let tabContent = <p>Please click to selection an option.</p>;
@@ -26,8 +27,8 @@ function Examples() {
 
 	return (
 		<Section id='examples' title='Examples'>
-			<menu>
-				{reactArtifacts.map((item) => (
+			<Tabs
+				tabButtons={reactArtifacts.map((item) => (
 					<TabButton
 						isSelected={selectedButton === item.name}
 						key={item.id}
@@ -36,8 +37,9 @@ function Examples() {
 						{item.display}
 					</TabButton>
 				))}
-			</menu>
-			{tabContent}
+			>
+				{tabContent}
+			</Tabs>
 		</Section>
 	);
 }
