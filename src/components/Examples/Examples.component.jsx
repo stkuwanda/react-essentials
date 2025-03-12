@@ -37,6 +37,8 @@ function Examples() {
 						{item.display}
 					</TabButton>
 				))}
+				// tabButtonsContainer={Section} // set a custom component dynamically
+				tabButtonsContainer='menu' // set an in-built component dynamically
 			>
 				{tabContent}
 			</Tabs>
